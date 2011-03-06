@@ -7,10 +7,6 @@
  *
  */
 
-#import "gametime.h"
-#import "texturemanager.h"
-#import "bgdraw.h"
-
 // ms per frame, 50 = 20fps
 #define timebase 50
 

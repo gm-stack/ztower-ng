@@ -8,12 +8,13 @@
 #include "defs.h"
 #include "gametime.h"
 #include "textureManager.h"
+#include "bgdraw.h"
 
 static SDL_Surface *gScreen;
 
 static GameTime gt;
 static textureManager textM;
-static bgDraw bg(&gt);
+static bgDraw *bg;
 
 static void createSurface (int fullscreen)
 {
@@ -76,7 +77,7 @@ static void mainLoop ()
 					SDL_AddTimer(timebase, redraw_event_push, 0);
 					glClear(GL_COLOR_BUFFER_BIT);
 					gt.incrementMinutes();
-					bg.drawBG();
+					bg->drawBG();
 					SDL_GL_SwapBuffers();
 					break;
 				case SDL_QUIT:
@@ -104,6 +105,7 @@ int main(int argc, char *argv[])
 
     createSurface (0);
 	textM.loadAll();
+	bg = new bgDraw(&gt,textM.texture("buildingsbg"));
     mainLoop ();
  	SDL_Quit();
 	

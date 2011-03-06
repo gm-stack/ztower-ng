@@ -16,7 +16,7 @@ using namespace std;
 class textureManager {
 	public:
 	textureManager();
-	zImage texture(string name);
+	zImage* texture(char* name);
 	void loadAll();
 	private:
 	map<string, zImage*> textures;

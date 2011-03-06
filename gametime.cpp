@@ -32,5 +32,5 @@ Uint32 GameTime::getHour() {
 }
 
 float GameTime::getFracHour() {
-	return (float)hours + ((float)minutes/60.0f);
+	return ((float)(hours % 24) + ((float)minutes/60.0f));
 }

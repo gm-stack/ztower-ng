@@ -7,13 +7,16 @@
  *
  */
 
-#import "defs.h"
+#import "gametime.h"
+#import "zImage.h"
 
 class bgDraw {
 	public:
-	bgDraw(GameTime *gt2);
+	bgDraw(GameTime *gt2, zImage *bg);
 	void drawBG();
 	void glRectangle(int x1, int y1, int x2, int y2);
 private:
 	GameTime *gt;
+	zImage *bgimage;
 };
+

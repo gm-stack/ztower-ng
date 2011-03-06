@@ -9,8 +9,9 @@
 
 #include "bgdraw.h"
 
-bgDraw::bgDraw(GameTime *gt2) {
+bgDraw::bgDraw(GameTime *gt2, zImage *bg) {
 	gt = gt2;
+	bgimage = bg;
 }
 
 void bgDraw::drawBG() {
@@ -46,13 +47,28 @@ void bgDraw::drawBG() {
 	green = greenshift + (200/greenscale);
 	blue = blueshift + (200/bluescale);
 	
+	// draw sky
 	glDisable(GL_TEXTURE_2D);
 	glColor4f( red/255.0f, green/255.0f, blue/255.0f, 1.0f);
 	glRectangle(0,0,1024,768);
 	
+	
+	// draw dirt
 	glColor4f(0.5f, 0.4f, 0.2985f, 1.0f);
 	glRectangle(0,0,1024, 8);
 	glEnable(GL_TEXTURE_2D);
+
+	// draw buildings
+	int x,y,w,h;
+	x=0;y=8;
+	w=bgimage->sizex;
+	h=bgimage->sizey;
+	
+	while (x < 1024) {
+		bgimage->draw(x,y);
+		x=x+w;
+	}
+
 		
 }
 

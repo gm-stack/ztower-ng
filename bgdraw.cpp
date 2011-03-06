@@ -50,8 +50,8 @@ void bgDraw::drawBG() {
 	glColor4f( red/255.0f, green/255.0f, blue/255.0f, 1.0f);
 	glRectangle(0,0,1024,768);
 	
-	//glColor4f(0.5f, 0.4f, 0.2985f, 1.0f);
-	//glRectangle(0,0,1024, 8);
+	glColor4f(0.5f, 0.4f, 0.2985f, 1.0f);
+	glRectangle(0,0,1024, 8);
 	glEnable(GL_TEXTURE_2D);
 		
 }

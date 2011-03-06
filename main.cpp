@@ -19,12 +19,12 @@ static void createSurface (int fullscreen)
 {
     Uint32 flags = 0;
     
-    flags = SDL_OPENGL;
+    flags = SDL_OPENGL | SDL_RESIZABLE;
     if (fullscreen)
         flags |= SDL_FULLSCREEN;
     
 	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
-    gScreen = SDL_SetVideoMode (1024, 768, 0, flags);
+    gScreen = SDL_SetVideoMode (1024, 768, 32, flags);
     if (gScreen == NULL) {
         fprintf (stderr, "Couldn't set 640x480 OpenGL video mode: %s\n",
                  SDL_GetError());
@@ -38,7 +38,7 @@ static void createSurface (int fullscreen)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	
-	glOrtho(0.0f,1024.0,0.0f,768.0,-1.0f,-1.0f);
+	glOrtho(0.0f, 1024.0, 0.0f, 768.0, 1.0f, -1.0f);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	

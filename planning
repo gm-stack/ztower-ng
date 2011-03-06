@@ -1,0 +1,54 @@
+The Code:
+Primarily C++ - object orientation makes things simpler
+ - but do we need that much flexibility? C is simpler and faster
+ - where do we really need object orientation
+SDL for base / graphics
+Lua scripting for the buildings
+
+Each Frame:
+Paint background
+Paint buildings
+Check buildings in view for update
+
+Each Building:
+- what is your current status?
+- what is your current texture?
+- configure building
+- "think" function sent to everything every 5 in-game "minutes"
+
+Transport:
+- probably need to hardcode types
+- elevators
+	- scheduling algorithm
+
+People:
+- simulate at a person level
+- pathfinding
+  - figure out where i need to go, replace orders in queue with "go to"
+  - call "goto" function which figures out how long it takes, then calls think() after that
+- they know what they have to do - try to complete jobs
+- expected times - sometimes realistic, sometimes not
+- created every now and again
+	- coming in for shopping / restaurant
+- persistant people
+	- office workers
+	- people living in apartments
+	- office owners
+
+Misc:
+- let's get proper alpha channels this time
+
+Scripted Events:
+- Function at midnight, set callback time if event is happening
+- Callback function runs at gate time
+
+Building Types:
+	- Office
+	- Restaurant
+	- Hotel Room
+	- Apartment
+
+lua functions for items to call:
+	- payment (money in, money out)
+	- find other items on the same floor (noise level)
+	- vacate building

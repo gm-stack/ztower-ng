@@ -3,19 +3,17 @@
 #include <string.h>
 #include <math.h>
 #include "SDL.h"
+#include <SDL_image/SDL_image.h>
 
 #include "defs.h"
 #include "gametime.h"
+#include "textureManager.h"
 
 static SDL_Surface *gScreen;
+
 static GameTime gt;
-
-
-static void initAttributes ()
-{
-    SDL_GL_SetAttribute (SDL_GL_DEPTH_SIZE, 16);
-    SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
-}
+static textureManager textM;
+static bgDraw bg(&gt);
 
 static void createSurface (int fullscreen)
 {
@@ -25,6 +23,7 @@ static void createSurface (int fullscreen)
     if (fullscreen)
         flags |= SDL_FULLSCREEN;
     
+	SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER, 1);
     gScreen = SDL_SetVideoMode (1024, 768, 0, flags);
     if (gScreen == NULL) {
         fprintf (stderr, "Couldn't set 640x480 OpenGL video mode: %s\n",
@@ -32,6 +31,22 @@ static void createSurface (int fullscreen)
 		SDL_Quit();
 		exit(2);
 	}
+	
+	SDL_GL_SwapBuffers();
+	
+	glViewport(0,0,1024,768);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	
+	glOrtho(0.0f,1024.0,0.0f,768.0,-1.0f,-1.0f);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	
+	glDisable(GL_DEPTH_TEST);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+	
+	
 }
 
 
@@ -58,7 +73,11 @@ static void mainLoop ()
 				case SDL_KEYDOWN:
 					/* Any keypress quits the app... */
 				case REDRAW_EVENT:
-					SDL_AddTimer(timebase, redraw_event_push, 0);					
+					SDL_AddTimer(timebase, redraw_event_push, 0);
+					glClear(GL_COLOR_BUFFER_BIT);
+					gt.incrementMinutes();
+					bg.drawBG();
+					SDL_GL_SwapBuffers();
 					break;
 				case SDL_QUIT:
 					done = 1;
@@ -78,9 +97,13 @@ int main(int argc, char *argv[])
 			SDL_GetError());
 		exit(1);
 	}
+	
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) == 0) {
+		printf("IMG_Init failed: %s\n", IMG_GetError());
+	}
 
-    initAttributes ();    
     createSurface (0);
+	textM.loadAll();
     mainLoop ();
  	SDL_Quit();
 	

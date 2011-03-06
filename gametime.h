@@ -13,7 +13,9 @@ class GameTime {
 	void incrementMinutes();
 	Uint32 getHour();
 	Uint32 getMinute();
+	float getFracHour();
 	
 	private:
 	Uint32 minutes;
+	Uint32 hours;
 };

@@ -14,6 +14,13 @@
 		002F3C0109D093BD00EBEB88 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F3C0009D093BD00EBEB88 /* OpenGL.framework */; };
 		002F3C6109D0951E00EBEB88 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F3C6009D0951E00EBEB88 /* GLUT.framework */; };
 		875AA0B7132322230055526A /* Lua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 875AA0B6132322230055526A /* Lua.framework */; };
+		875AA103132323FC0055526A /* Lua.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 875AA0B6132322230055526A /* Lua.framework */; };
+		875AA133132326000055526A /* SDL_image.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 875AA132132326000055526A /* SDL_image.framework */; };
+		875AA147132326420055526A /* bgdraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA146132326420055526A /* bgdraw.cpp */; };
+		875AA14D132326660055526A /* texturemanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA14C132326660055526A /* texturemanager.cpp */; };
+		875AA152132326E20055526A /* zImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA151132326E20055526A /* zImage.cpp */; };
+		875AA172132328470055526A /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 875AA132132326000055526A /* SDL_image.framework */; };
+		875AA18B132329230055526A /* images in Resources */ = {isa = PBXBuildFile; fileRef = 875AA189132329230055526A /* images */; };
 		87C145AC13213928006F3303 /* gametime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87C145AB13213928006F3303 /* gametime.cpp */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -26,6 +33,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				875AA133132326000055526A /* SDL_image.framework in Copy Frameworks into .app bundle */,
+				875AA103132323FC0055526A /* Lua.framework in Copy Frameworks into .app bundle */,
 				002F3A0009D0884600EBEB88 /* SDL.framework in Copy Frameworks into .app bundle */,
 			);
 			name = "Copy Frameworks into .app bundle";
@@ -47,6 +56,14 @@
 		32CA4F630368D1EE00C91783 /* ztower-ng_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ztower-ng_Prefix.pch"; sourceTree = "<group>"; };
 		875AA0AF132321000055526A /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
 		875AA0B6132322230055526A /* Lua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lua.framework; sourceTree = "<group>"; };
+		875AA132132326000055526A /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_image.framework; sourceTree = "<group>"; };
+		875AA145132326420055526A /* bgdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bgdraw.h; sourceTree = "<group>"; };
+		875AA146132326420055526A /* bgdraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bgdraw.cpp; sourceTree = "<group>"; };
+		875AA14B132326660055526A /* texturemanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texturemanager.h; sourceTree = "<group>"; };
+		875AA14C132326660055526A /* texturemanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texturemanager.cpp; sourceTree = "<group>"; };
+		875AA150132326E20055526A /* zImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zImage.h; sourceTree = "<group>"; };
+		875AA151132326E20055526A /* zImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zImage.cpp; sourceTree = "<group>"; };
+		875AA189132329230055526A /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		87C145AA13213928006F3303 /* gametime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gametime.h; sourceTree = "<group>"; };
 		87C145AB13213928006F3303 /* gametime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gametime.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875AA172132328470055526A /* SDL_image.framework in Frameworks */,
 				002F39FA09D0881F00EBEB88 /* SDL.framework in Frameworks */,
 				002F3C6109D0951E00EBEB88 /* GLUT.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
@@ -80,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				002F3A2B09D0888800EBEB88 /* SDLMain.h */,
+				875AA189132329230055526A /* images */,
 				002F3A2C09D0888800EBEB88 /* SDLMain.m */,
 			);
 			name = Classes;
@@ -88,12 +107,14 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				875AA132132326000055526A /* SDL_image.framework */,
 				87C145AA13213928006F3303 /* gametime.h */,
 				87C145AB13213928006F3303 /* gametime.cpp */,
 				002F39F909D0881F00EBEB88 /* SDL.framework */,
 				002F3C6009D0951E00EBEB88 /* GLUT.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				002F3C0009D093BD00EBEB88 /* OpenGL.framework */,
+				875AA0B6132322230055526A /* Lua.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -123,7 +144,12 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				875AA0B6132322230055526A /* Lua.framework */,
+				875AA145132326420055526A /* bgdraw.h */,
+				875AA146132326420055526A /* bgdraw.cpp */,
+				875AA14B132326660055526A /* texturemanager.h */,
+				875AA14C132326660055526A /* texturemanager.cpp */,
+				875AA150132326E20055526A /* zImage.h */,
+				875AA151132326E20055526A /* zImage.cpp */,
 			);
 			name = "ztower-ng";
 			sourceTree = "<group>";
@@ -208,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875AA18B132329230055526A /* images in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +249,9 @@
 				002F3A2E09D0888800EBEB88 /* SDLMain.m in Sources */,
 				002F3A3F09D088BA00EBEB88 /* main.cpp in Sources */,
 				87C145AC13213928006F3303 /* gametime.cpp in Sources */,
+				875AA147132326420055526A /* bgdraw.cpp in Sources */,
+				875AA14D132326660055526A /* texturemanager.cpp in Sources */,
+				875AA152132326E20055526A /* zImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

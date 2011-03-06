@@ -11,11 +11,16 @@
 
 GameTime::GameTime() {
 	minutes = 0;
+	hours = 0;
 	return;
 }
 
 void GameTime::incrementMinutes() {
 	minutes++;
+	if (minutes == 60) {
+		minutes = 0;
+		hours++;
+	}
 }
 
 Uint32 GameTime::getMinute() {
@@ -23,5 +28,9 @@ Uint32 GameTime::getMinute() {
 }
 
 Uint32 GameTime::getHour() {
-	return (minutes / 60) % 24;
+	return hours;
+}
+
+float GameTime::getFracHour() {
+	return (float)hours + ((float)minutes/60.0f);
 }

@@ -7,7 +7,14 @@
  *
  */
 
+#import "gametime.h"
+#import "texturemanager.h"
+#import "bgdraw.h"
+
 // ms per frame, 50 = 20fps
 #define timebase 50
 
 #define REDRAW_EVENT (SDL_USEREVENT)
+
+#define SYSTEM_FILEPATH "ztower-ng.app/Contents/Resources/"
+

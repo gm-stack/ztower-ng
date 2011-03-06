@@ -8,9 +8,12 @@
  */
 
 #include "buildingOffice.h"
+#import "defs.h"
 
-Office::Office(zImage* texture2, Uint32 position2, Uint32 floor2):
-buildingObject(texture2,position2,floor2) {
+Office::Office(Uint32 position2, Uint32 floor2, textureManager* tm):
+buildingObject(position2,floor2,tm) {
+	luaL_dofile(L,SYSTEM_FILEPATH "Office.lua");
+	texture = tm->texture("office_1_open");
 }
 
 void Office::fivemin_process() {

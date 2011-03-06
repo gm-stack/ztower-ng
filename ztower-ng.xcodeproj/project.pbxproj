@@ -23,6 +23,8 @@
 		875AA5BC132357040055526A /* buildingOffice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA5BB132357040055526A /* buildingOffice.cpp */; };
 		875AA796132364720055526A /* liblua.a in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 875AA795132364720055526A /* liblua.a */; };
 		875AA7971323647F0055526A /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875AA795132364720055526A /* liblua.a */; };
+		875AA7EE132366E70055526A /* Office.lua in Resources */ = {isa = PBXBuildFile; fileRef = 875AA7EC132366C20055526A /* Office.lua */; };
+		875AA819132367B70055526A /* ConstructionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA818132367B70055526A /* ConstructionManager.cpp */; };
 		87C145AC13213928006F3303 /* gametime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87C145AB13213928006F3303 /* gametime.cpp */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -73,6 +75,9 @@
 		875AA7A2132364980055526A /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "lua-5.1.4/src/lua.h"; sourceTree = "<group>"; };
 		875AA7A9132364AB0055526A /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "lua-5.1.4/src/lualib.h"; sourceTree = "<group>"; };
 		875AA7AA132364B00055526A /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "lua-5.1.4/src/lauxlib.h"; sourceTree = "<group>"; };
+		875AA7EC132366C20055526A /* Office.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Office.lua; sourceTree = "<group>"; };
+		875AA817132367B70055526A /* ConstructionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstructionManager.h; sourceTree = "<group>"; };
+		875AA818132367B70055526A /* ConstructionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstructionManager.cpp; sourceTree = "<group>"; };
 		87C145AA13213928006F3303 /* gametime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gametime.h; sourceTree = "<group>"; };
 		87C145AB13213928006F3303 /* gametime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gametime.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 				875AA14C132326660055526A /* texturemanager.cpp */,
 				875AA150132326E20055526A /* zImage.h */,
 				875AA151132326E20055526A /* zImage.cpp */,
+				875AA7EC132366C20055526A /* Office.lua */,
 			);
 			name = "ztower-ng";
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				875AA817132367B70055526A /* ConstructionManager.h */,
+				875AA818132367B70055526A /* ConstructionManager.cpp */,
 				875AA0AF132321000055526A /* defs.h */,
 				002F3BF309D0937800EBEB88 /* atlantis */,
 				32CA4F630368D1EE00C91783 /* ztower-ng_Prefix.pch */,
@@ -250,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875AA7EE132366E70055526A /* Office.lua in Resources */,
 				875AA18B132329230055526A /* images in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 			);
@@ -270,6 +279,7 @@
 				875AA152132326E20055526A /* zImage.cpp in Sources */,
 				875AA5A1132350F20055526A /* buildingObject.cpp in Sources */,
 				875AA5BC132357040055526A /* buildingOffice.cpp in Sources */,
+				875AA819132367B70055526A /* ConstructionManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

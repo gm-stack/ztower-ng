@@ -9,12 +9,14 @@
 #include "gametime.h"
 #include "textureManager.h"
 #include "bgdraw.h"
+#include "ConstructionManager.h"
 
 static SDL_Surface *gScreen;
 
 static GameTime gt;
 static textureManager textM;
 static bgDraw *bg;
+static ConstructionManager *cm;
 
 static void createSurface (int fullscreen)
 {
@@ -78,6 +80,7 @@ static void mainLoop ()
 					glClear(GL_COLOR_BUFFER_BIT);
 					gt.incrementMinutes();
 					bg->drawBG();
+					cm->drawObjects();
 					SDL_GL_SwapBuffers();
 					break;
 				case SDL_QUIT:
@@ -106,6 +109,8 @@ int main(int argc, char *argv[])
     createSurface (0);
 	textM.loadAll();
 	bg = new bgDraw(&gt,textM.texture("buildingsbg"));
+	cm = new ConstructionManager(&textM);
+	cm->buildOffice(100, 20);
     mainLoop ();
  	SDL_Quit();
 	

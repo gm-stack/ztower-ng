@@ -6,7 +6,7 @@
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
  *
  */
-
+#import "texturemanager.h"
 #import "zImage.h"
 extern "C" {
 #include "lua.h"
@@ -17,12 +17,14 @@ extern "C" {
 
 class buildingObject {
 public:
-	buildingObject(zImage* texture2,Uint32 position2, Uint32 floor2);
+	buildingObject(Uint32 position2, Uint32 floor2, textureManager* tm);
 	void draw();
 	virtual void fivemin_process();
-private:
+protected:
+	lua_State* L;
+	textureManager *tm;
 	zImage* texture;
+private:
 	Uint32 position;
 	Uint32 floor;
-	lua_State* L;
 };

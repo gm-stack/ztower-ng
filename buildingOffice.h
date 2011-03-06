@@ -8,8 +8,10 @@
  */
 
 #import "buildingObject.h"
+#import "texturemanager.h"
 
 class Office : public buildingObject {
-	Office(zImage* texture2, Uint32 position2, Uint32 floor2);
+public:
+	Office(Uint32 position2, Uint32 floor2, textureManager* tm);
 	void fivemin_process();
 };

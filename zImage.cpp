@@ -19,9 +19,7 @@ zImage::zImage(char* filename) {
 	
 	int w=1; while (w<image->w) {w = w*2;}
 	int h=1; while (h<image->h) {h = h*2;}
-	
-	printf("target dimensions are %u,%u\n",w,h);
-	
+		
 	surface = SDL_CreateRGBSurface(SDL_SWSURFACE, w, h, 32, 0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF);
 	SDL_SetAlpha(image, 0, 255);
 	
@@ -29,9 +27,7 @@ zImage::zImage(char* filename) {
 	tcy = ((float)image->h/(float)surface->h);
 	sizex = image->w;
 	sizey = image->h;
-	
-	printf("tcx %f, tcy %f, sizex %u, sizey %u\n",tcx,tcy,sizex,sizey);
-	
+		
 	SDL_BlitSurface(image, NULL, surface, NULL);
 	
 	

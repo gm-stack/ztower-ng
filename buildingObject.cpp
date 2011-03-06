@@ -9,16 +9,17 @@
 
 #include "buildingObject.h"
 
-buildingObject::buildingObject(zImage* texture2,Uint32 position2, Uint32 floor2) {
-	texture = texture2;
+buildingObject::buildingObject(Uint32 position2, Uint32 floor2, textureManager* tm2) {
 	position = position2;
 	floor = floor2;
+	tm = tm2;
 	
 	L = lua_open();
 	luaopen_base(L);
 	luaopen_table(L);
 	luaopen_string(L);
 	luaopen_math(L);
+	printf("lua inited\n");
 }
 
 void buildingObject::draw() {

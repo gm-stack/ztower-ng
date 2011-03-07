@@ -10,13 +10,15 @@
 #include "textureManager.h"
 #include "bgdraw.h"
 #include "ConstructionManager.h"
+#include "floorManager.h"
 
 static SDL_Surface *gScreen;
 
-static GameTime gt;
+static GameTime *gt;
 static textureManager textM;
 static bgDraw *bg;
 static ConstructionManager *cm;
+static FloorManager *fm;
 
 static void createSurface (int fullscreen)
 {
@@ -78,8 +80,9 @@ static void mainLoop ()
 				case REDRAW_EVENT:
 					SDL_AddTimer(timebase, redraw_event_push, 0);
 					glClear(GL_COLOR_BUFFER_BIT);
-					gt.incrementMinutes();
+					gt->incrementMinutes();
 					bg->drawBG();
+					fm->drawFloor();
 					cm->drawObjects();
 					SDL_GL_SwapBuffers();
 					break;
@@ -108,9 +111,12 @@ int main(int argc, char *argv[])
 
     createSurface (0);
 	textM.loadAll();
-	bg = new bgDraw(&gt,textM.texture("buildingsbg"));
 	cm = new ConstructionManager(&textM);
-	cm->buildOffice(100, 20);
+	gt = new GameTime(cm);
+	bg = new bgDraw(gt,textM.texture("buildingsbg"));
+	fm = new FloorManager(&textM);
+	cm->buildOffice(5, 1);
+	fm->buildFloor(0,10,20);
     mainLoop ();
  	SDL_Quit();
 	

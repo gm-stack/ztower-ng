@@ -25,6 +25,8 @@
 		875AA7971323647F0055526A /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875AA795132364720055526A /* liblua.a */; };
 		875AA7EE132366E70055526A /* Office.lua in Resources */ = {isa = PBXBuildFile; fileRef = 875AA7EC132366C20055526A /* Office.lua */; };
 		875AA819132367B70055526A /* ConstructionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA818132367B70055526A /* ConstructionManager.cpp */; };
+		875AA965132445140055526A /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA964132445140055526A /* utils.cpp */; };
+		875AA9BF1324493F0055526A /* floorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 875AA9BE1324493F0055526A /* floorManager.cpp */; };
 		87C145AC13213928006F3303 /* gametime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87C145AB13213928006F3303 /* gametime.cpp */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -78,6 +80,10 @@
 		875AA7EC132366C20055526A /* Office.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Office.lua; sourceTree = "<group>"; };
 		875AA817132367B70055526A /* ConstructionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstructionManager.h; sourceTree = "<group>"; };
 		875AA818132367B70055526A /* ConstructionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstructionManager.cpp; sourceTree = "<group>"; };
+		875AA963132445140055526A /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		875AA964132445140055526A /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		875AA9BD1324493F0055526A /* floorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floorManager.h; sourceTree = "<group>"; };
+		875AA9BE1324493F0055526A /* floorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = floorManager.cpp; sourceTree = "<group>"; };
 		87C145AA13213928006F3303 /* gametime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gametime.h; sourceTree = "<group>"; };
 		87C145AB13213928006F3303 /* gametime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gametime.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +127,10 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				875AA9BD1324493F0055526A /* floorManager.h */,
+				875AA9BE1324493F0055526A /* floorManager.cpp */,
+				875AA963132445140055526A /* utils.h */,
+				875AA964132445140055526A /* utils.cpp */,
 				875AA5BA132357040055526A /* buildingOffice.h */,
 				875AA5BB132357040055526A /* buildingOffice.cpp */,
 				875AA59F132350F20055526A /* buildingObject.h */,
@@ -280,6 +290,8 @@
 				875AA5A1132350F20055526A /* buildingObject.cpp in Sources */,
 				875AA5BC132357040055526A /* buildingOffice.cpp in Sources */,
 				875AA819132367B70055526A /* ConstructionManager.cpp in Sources */,
+				875AA965132445140055526A /* utils.cpp in Sources */,
+				875AA9BF1324493F0055526A /* floorManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

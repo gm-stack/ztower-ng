@@ -8,6 +8,7 @@
  */
 
 #include "buildingObject.h"
+#include "utils.h"
 
 buildingObject::buildingObject(Uint32 position2, Uint32 floor2, textureManager* tm2) {
 	position = position2;
@@ -23,7 +24,9 @@ buildingObject::buildingObject(Uint32 position2, Uint32 floor2, textureManager* 
 }
 
 void buildingObject::draw() {
-	texture->draw(position,floor);
+	int floor_pixels = floor2pixels(floor);
+	Uint32 pos_pixels = pos2pixels(position);
+	texture->draw(pos_pixels,floor_pixels);
 }
 
 void buildingObject::fivemin_process() {

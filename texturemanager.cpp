@@ -17,6 +17,8 @@ void textureManager::loadAll() {
 	textures["buildingsbg"] = new zImage(SYSTEM_FILEPATH "images/buildingsbg.png");
 	textures["office_1_open"] = new zImage(SYSTEM_FILEPATH "images/office_1_open.png");
 	textures["office_1_closed"] = new zImage(SYSTEM_FILEPATH "images/office_1_closed.png");
+	textures["empty"] = new zImage(SYSTEM_FILEPATH "images/empty.png");
+	textures["firestairs"] = new zImage(SYSTEM_FILEPATH "images/firestairs.png");
 }
 
 zImage* textureManager::texture(char* texture) {

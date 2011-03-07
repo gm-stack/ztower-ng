@@ -19,7 +19,13 @@ void ConstructionManager::drawObjects() {
 	}
 }
 
-void ConstructionManager::buildOffice(Uint32 position, Uint32 floor) {
+void ConstructionManager::fivemin_process() {
+	for (list<buildingObject*>::iterator it = objects.begin(); it != objects.end(); it++) {
+		(*it)->fivemin_process();
+	}
+}
+
+void ConstructionManager::buildOffice(Uint32 position, int floor) {
 	Office *built = new Office(position,floor,tm);
 	objects.push_back(built);
 }

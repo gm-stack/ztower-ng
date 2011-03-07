@@ -19,7 +19,8 @@ class ConstructionManager {
 public:
 	ConstructionManager(textureManager *tm2);
 	void drawObjects();
-	void buildOffice(Uint32 position, Uint32 floor);
+	void buildOffice(Uint32 position, int floor);
+	void fivemin_process();
 private:
 	list<buildingObject*> objects;
 	textureManager *tm;

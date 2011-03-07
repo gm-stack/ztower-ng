@@ -15,6 +15,7 @@ class zImage {
 	public:
 	zImage(char* filename);
 	void draw(int x, int y);
+	void drawWidth(int x, int y, int width);
 	SDL_Surface *surface;
 	GLuint glu;
 	float tcx;

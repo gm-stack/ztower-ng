@@ -61,3 +61,25 @@ void zImage::draw(int x, int y) {
 	
 	glEnd();
 }
+
+void zImage::drawWidth(int x, int y, int width) {
+	glBindTexture(GL_TEXTURE_2D, glu);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	glBegin(GL_QUADS);
+	glColor4f(1.0f,1.0f,1.0f,1.0f);
+	
+	glTexCoord2f(0.0f,0.0f);
+	glVertex3f(x, y+sizey,0);
+	
+	glTexCoord2f(tcx,0);
+	glVertex3f(x+width, y+sizey, 0);
+	
+	glTexCoord2f(tcx,tcy);
+	glVertex3f(x+width, y, 0);
+	
+	glTexCoord2f(0,tcy);
+	glVertex3f(x,y,0);
+	
+	glEnd();
+}

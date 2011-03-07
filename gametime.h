@@ -7,9 +7,11 @@
  *
  */
 
+#import "ConstructionManager.h"
+
 class GameTime {
 	public:
-	GameTime();
+	GameTime(ConstructionManager *cm2);
 	void incrementMinutes();
 	Uint32 getHour();
 	Uint32 getMinute();
@@ -17,5 +19,5 @@ class GameTime {
 	
 	private:
 	Uint32 minutes;
-	Uint32 hours;
+	ConstructionManager *cm;
 };

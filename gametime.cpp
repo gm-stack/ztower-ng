@@ -9,17 +9,16 @@
 
 #include "gametime.h"
 
-GameTime::GameTime() {
+GameTime::GameTime(ConstructionManager *cm2) {
 	minutes = 0;
-	hours = 0;
+	cm = cm2;
 	return;
 }
 
 void GameTime::incrementMinutes() {
 	minutes++;
-	if (minutes == 60) {
-		minutes = 0;
-		hours++;
+	if (!(minutes % 5)) {
+		cm->fivemin_process();
 	}
 }
 
@@ -28,9 +27,9 @@ Uint32 GameTime::getMinute() {
 }
 
 Uint32 GameTime::getHour() {
-	return hours;
+	return (unsigned int)(minutes / 60);
 }
 
 float GameTime::getFracHour() {
-	return ((float)(hours % 24) + ((float)minutes/60.0f));
+	return (float)minutes/60.0f;
 }

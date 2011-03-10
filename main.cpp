@@ -76,7 +76,23 @@ static void mainLoop ()
 				case SDL_MOUSEBUTTONDOWN:
 					break;
 				case SDL_KEYDOWN:
-					/* Any keypress quits the app... */
+					switch (event.key.keysym.sym) {
+						case SDLK_LEFT:
+							glTranslatef(10, 0, 0);
+							break;
+						case SDLK_RIGHT:
+							glTranslatef(-10,0,0);
+							break;
+						case SDLK_UP:
+							glTranslatef(0,-10,0);
+							break;
+						case SDLK_DOWN:
+							glTranslatef(0,10,0);
+							break;
+						default:
+							break;
+					}
+					break;
 				case REDRAW_EVENT:
 					SDL_AddTimer(timebase, redraw_event_push, 0);
 					glClear(GL_COLOR_BUFFER_BIT);
@@ -116,7 +132,9 @@ int main(int argc, char *argv[])
 	bg = new bgDraw(gt,textM.texture("buildingsbg"));
 	fm = new FloorManager(&textM);
 	cm->buildOffice(5, 1);
-	fm->buildFloor(0,10,20);
+	fm->buildFloor(0,5,40);
+	fm->buildFloor(1,5,40);
+	fm->buildFloor(2,5,40);
     mainLoop ();
  	SDL_Quit();
 	

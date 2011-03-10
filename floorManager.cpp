@@ -33,7 +33,6 @@ void FloorManager::drawFloor() {
 		printf("warning: left != right\n");
 	}
 	for(int i=0;i<llen;i++) {
-		printf("lbound = %u, rbound = %u\n",leftBound[i],rightBound[i]);
 		Uint32 leftPixels = pos2pixels(leftBound[i]);
 		Uint32 rightPixels = pos2pixels(rightBound[i]);
 		emptybg->drawWidth(leftPixels, floor2pixels(i), rightPixels-leftPixels);

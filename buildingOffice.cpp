@@ -17,5 +17,4 @@ buildingObject(position2,floor2,tm) {
 }
 
 void Office::fivemin_process() {
-	printf("fünf minuten\n");
 }
